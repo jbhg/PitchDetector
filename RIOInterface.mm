@@ -95,10 +95,10 @@ OSStatus RenderFFTCallback (void					*inRefCon,
 					   AudioBufferList				*ioData)
 {
 	RIOInterface* THIS = (RIOInterface *)inRefCon;
-	COMPLEX_SPLIT A = THIS->A;
-	void *dataBuffer = THIS->dataBuffer;
+	COMPLEX_SPLIT A    = THIS->A;
+	void *dataBuffer   = THIS->dataBuffer;
 	float *outputBuffer = THIS->outputBuffer;
-	FFTSetup fftSetup = THIS->fftSetup;
+	FFTSetup fftSetup  = THIS->fftSetup;
 	
 	uint32_t log2n = THIS->log2n;
 	uint32_t n = THIS->n;
