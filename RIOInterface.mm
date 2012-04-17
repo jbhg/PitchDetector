@@ -355,12 +355,12 @@ void ConvertInt16ToFloat(RIOInterface* THIS, void *buf, float *outputBuf, size_t
 	
     NSLog (@"  Sample Rate:         %10.0f",  asbd.mSampleRate);
     NSLog (@"  Format ID:           %10s",    formatIDString);
-    NSLog (@"  Format Flags:        %10X",    asbd.mFormatFlags);
-    NSLog (@"  Bytes per Packet:    %10d",    asbd.mBytesPerPacket);
-    NSLog (@"  Frames per Packet:   %10d",    asbd.mFramesPerPacket);
-    NSLog (@"  Bytes per Frame:     %10d",    asbd.mBytesPerFrame);
-    NSLog (@"  Channels per Frame:  %10d",    asbd.mChannelsPerFrame);
-    NSLog (@"  Bits per Channel:    %10d",    asbd.mBitsPerChannel);
+    NSLog (@"  Format Flags:        %10lX",    asbd.mFormatFlags);
+    NSLog (@"  Bytes per Packet:    %10lu",    asbd.mBytesPerPacket);
+    NSLog (@"  Frames per Packet:   %10lu",    asbd.mFramesPerPacket);
+    NSLog (@"  Bytes per Frame:     %10lu",    asbd.mBytesPerFrame);
+    NSLog (@"  Channels per Frame:  %10lu",    asbd.mChannelsPerFrame);
+    NSLog (@"  Bits per Channel:    %10lu",    asbd.mBitsPerChannel);
 }
 
 
@@ -400,10 +400,6 @@ static RIOInterface *sharedInstance = nil;
 
 - (unsigned)retainCount {
     return UINT_MAX;  // denotes an object that cannot be released
-}
-
-- (void)release {
-    //do nothing
 }
 
 - (id)autorelease {
